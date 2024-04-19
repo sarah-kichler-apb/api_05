@@ -24,6 +24,11 @@ app.use((req, res, next) => {
 
 const connection = mysql.createConnection(mysql_config);
 
+//inserindo o tratamento dos params---------------------------------------------------------
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+//------------------------------------------------------------------------------------------
+
 app.use(cors());
 
 //rotas
@@ -78,9 +83,52 @@ app.put('/tasks/:id/status/:status', (req, res) => {
     })
 })
 
+//rota para excluir uma task
+app.delete('/tasks/:id/delete', (req, res) => {
+    const id = req.params.id;
+    connection.query('DELETE FROM tasks WHERE id = ?', [id], (err, rows) => {
+        if (!err) {
+            if (rows.affectedRows > 0) {
+                res.json(functions.response('Sucesso', 'Task deletada', rows.affectedRows, null))
+            }
+            else {
+                res.json(functions.response('Atenção', 'Task não encontrada', 0, null))
+            }
+        }
+        else {
+            res.json(functions.response('Erro', err.message, 0, null))
+        }
+    })
+})
 
+//endpoint para adicionar uma nova task
+app.post('/tasks/create', (req, res) => {
+    //como a task é um texto e o status também, precisaremos, através da rota, adicionar midleware (tudo adicionado durante a rota)
+    const post_data = req.body;
 
+    if (post_data == undefined) {
+        res.json(functions.response('Atenção', 'Sem os dados necessários para criação de uma nova task', 0, null));
+        return;
+    }
+    //checar se os dados informados são inválidos
+    if (post_data.task == undefined || post_data.status == undefined) {
+        res.json(functions.response('Atenção', 'Dados inválidos', 0, null));
+        return;
+    }
 
+    // pegar os dados da task
+    const task = post_data.task;
+    const status = post_data.status;
+
+    // inserir a task
+    connection.query('INSERT INTO tasks (task,status,created_at,updated_at) VALUES (?,?,NOW(),NOW())', [task, status],(err,rows)=>{
+        if (!err) {
+            res.json(functions.response('Sucesso', 'Task cadastrada com sucesso', rows.affectedRows, null));
+        } else {
+            res.json(functions.response('Erro', err.message, 0, null));
+        }
+    })
+})
 
 app.use((req, res) => {
     res.json(functions.response('Atenção', 'Rota não encontrada', 0, null));
