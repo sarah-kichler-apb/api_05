@@ -1,0 +1,142 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "node_api",
+    "dateExported": "2024-04-22T18:21:53.708Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ed306a82-637d-4835-8f55-00348e48ccad",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "teste atualizar task",
+            "url": "http://localhost:3000/tasks/8/update",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-04-22T17:21:19.258Z",
+            "modified": "2024-04-22T17:51:11.054Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Se parabenizar pelo ótimo desempenho em servidores\",\n  \"status\": \"100/10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "15ff43f4-fea5-46fd-8776-aba1bb9f7965",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "teste de entrada",
+            "url": "http://localhost:3000/tasks",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-04-22T18:05:07.134Z",
+            "modified": "2024-04-22T18:17:26.913Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Se parabenizar pelo ótimo desempenho em servidores\",\n  \"status\": \"100/10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3fc48338-11b1-45e4-b313-75877dc52ce1",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "teste de todas",
+            "url": "http://localhost:3000/tasks/4",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-04-22T18:13:16.302Z",
+            "modified": "2024-04-22T18:17:59.237Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Se parabenizar pelo ótimo desempenho em servidores\",\n  \"status\": \"100/10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "cb34e023-d6f4-472e-9296-a3519cdc52dc",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "teste de task por id",
+            "url": "http://localhost:3000/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-22T18:13:17.902Z",
+            "modified": "2024-04-22T18:13:17.902Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Se parabenizar pelo ótimo desempenho em servidores\",\n  \"status\": \"100/10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "50df1717-b9ae-4069-9e5c-e81489532c69",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "task atualizar da task",
+            "url": "http://localhost:3000/tasks/6/status/atualizado",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-04-22T18:13:19.662Z",
+            "modified": "2024-04-22T18:20:08.089Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Se parabenizar pelo ótimo desempenho em servidores\",\n  \"status\": \"100/10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2655d892-767d-4664-afd1-50f514577b93",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "task deletar task",
+            "url": "http://localhost:3000/tasks/7/delete",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-04-22T18:13:33.582Z",
+            "modified": "2024-04-22T18:20:20.865Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Se parabenizar pelo ótimo desempenho em servidores\",\n  \"status\": \"100/10\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "00cbe25c-ab59-4c15-8838-e425b35317ca",
+            "colId": "be8d6dcc-71e9-45e7-b8a1-26dbb7598aad",
+            "containerId": "",
+            "name": "teste inserir task",
+            "url": "http://localhost:3000/tasks/create",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-04-22T18:13:35.318Z",
+            "modified": "2024-04-22T18:20:38.026Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"task\": \"Finalizar o projeto\",\n  \"status\": \"Em andamento\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
